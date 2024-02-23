@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ /* utility classes */
+ .page-container{
+  width: 80%;
+  margin: 0 auto;
+ }
+ .buttons{
+background-color: black;
+border: none;
+color: whitesmoke;
+/* border-bottom: 2px solid black; */
+ }
+ .buttons:hover{
+  background: rgb(1,4,13);
+  background: linear-gradient(90deg, rgba(1,4,13,1) 30%, rgba(28,40,45,1) 53%, rgb(19, 20, 20) 100%, rgba(29,253,205,1) 100%);
+  color: whitesmoke;
+
+ }
+ .nav-links{
+ 
+  font-size:1.4rem;
+border-bottom: 2px solid black;
+ }
+ .nav-links:hover{
+  border-top: 2px solid black;
+  /* border-bottom: 2px solid rgba(129, 125, 125, 0); */
+ }
+.Header{
+
+  box-shadow: rgba(143, 3, 3, 0.1) 0px 10px 15px -3px, rgba(116, 2, 2, 0.05) 0px 4px 6px -2px;
+  /* border: 3px solid black; */
+}
+
+.Footer{
+  border: 3px solid black; 
+  position: absolute;
+
+  
+}
