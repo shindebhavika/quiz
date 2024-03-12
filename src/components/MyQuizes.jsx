@@ -63,6 +63,7 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
         </button>
       </Link>
       {questions  ? (
+        <div style={{ maxHeight: "auto", overflowY: "auto" }} className="scroll-container">
       <table className="min-w-full bg-white border border-gray-300 table-data">
         <thead>
           <tr>
@@ -126,7 +127,7 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
             </tr>
           ))}
         </tbody>
-      </table>  ) : (
+      </table>  </div>) : (
         <h1 className="text-xl text-gray-600 mt-8 mb-4">
           Add at least one question.
         </h1>

@@ -90,7 +90,7 @@ function SingleAnswerForm() {
   };
 
   useEffect(() => {
-    localStorage.setItem("questions", JSON.stringify(question ));
+    localStorage.setItem("questions", JSON.stringify(question));
     const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
     dispatch(clearQuestions());
     storedQuestions.forEach((question) => dispatch(addQuestion(question)));
