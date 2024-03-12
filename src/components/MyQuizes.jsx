@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { MdDelete } from "react-icons/md";
-import { FaRegEdit } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 import CustomModal from "./CustomModal";
 import EditModal from "./EditModal";
