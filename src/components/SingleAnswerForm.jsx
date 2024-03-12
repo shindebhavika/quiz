@@ -113,7 +113,7 @@ function SingleAnswerForm() {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex  singleform-container">
       <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem] mt-4">
         <label className="block mb-2 font-semibold">Title:</label>
         <input
