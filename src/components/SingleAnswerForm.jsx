@@ -87,6 +87,8 @@ if(optionsError){
 
   useEffect(() => {
     const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+
+    // If there are no questions in local storage, add two default questions
     if (storedQuestions.length === 0) {
       const defaultQuestions = [
         {
@@ -119,6 +121,22 @@ if(optionsError){
       storedQuestions.forEach((question) => dispatch(addQuestion(question)));
     }
   }, [dispatch]);
+
+  const handleSave = () => {
+    const questionsWithTime = questions.map((question) => ({
+      ...question,
+      time: new Date().toLocaleString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      }),
+    }));
+    localStorage.setItem("questions", JSON.stringify(questionsWithTime));
+    alert("Questions created successfully!");
+  };
 
   return (
     <div className="flex singleform-container">
