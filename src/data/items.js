@@ -16,7 +16,7 @@ export const CardData = [
     title:"Play Quiz",
     description:"Play Quiz: Enjoy interactive challenges with diverse topics, customizable features, and easy sharing options for a fun and engaging experience.",
     action:"Play Quiz",
-    route:"/Create-Quiz" 
+    route:"/Play-Quiz" 
   },
   {
     id:"2",
@@ -24,6 +24,6 @@ export const CardData = [
     title:" MY Quizes",
     description:"Explore diverse quizzes tailored to your interests. Engage in interactive learning with shareable links. Dive into knowledge effortlessly with us.",
     action:" MY Quizes",
-    route:"/Create-Quiz" 
+    route:"/MY-Quizes" 
   },
 ];

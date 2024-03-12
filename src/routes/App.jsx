@@ -1,22 +1,23 @@
-
 import Navbar from "../components/Navbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import { QuizContextProvider } from "../data/QuizContext";
 
-
-// import { QuizContextProvider } from '../data/QuizContext'; // Adjust the import path
-
 function App() {
+  const location = useLocation();
+
+  // Check if the current route is the homepage
+  const isHomePage = location.pathname === "/";
+
   return (
     <>
-      <div className="main-wrapper min-h-full">
+      <div className="main-wrapper min-h-full w-full">
         {/* Wrap the components where you want to use QuizContextProvider */}
-       <QuizContextProvider><Navbar />
+        <QuizContextProvider>
+          <Navbar />
           <Outlet />
-          <Footer />
-          </QuizContextProvider>
-          
+          {isHomePage && <Footer />}
+        </QuizContextProvider>
       </div>
     </>
   );

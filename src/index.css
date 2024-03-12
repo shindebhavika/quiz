@@ -2,46 +2,401 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- /* utility classes */
- .page-container{
+
+/* utility classes */
+.page-container {
   width: 80%;
   margin: 0 auto;
- }
- .buttons{
-background-color: black;
-border: none;
-color: whitesmoke;
-/* border-bottom: 2px solid black; */
- }
- .buttons:hover{
-  background: rgb(1,4,13);
-  background: linear-gradient(90deg, rgba(1,4,13,1) 30%, rgba(28,40,45,1) 53%, rgb(19, 20, 20) 100%, rgba(29,253,205,1) 100%);
-  color: whitesmoke;
-
- }
- .nav-links{
- 
-  font-size:1.4rem;
-border-bottom: 2px solid black;
- }
- .nav-links:hover{
-  border-top: 2px solid black;
-  /* border-bottom: 2px solid rgba(129, 125, 125, 0); */
- }
-.Header{
-
-  box-shadow: rgba(143, 3, 3, 0.1) 0px 10px 15px -3px, rgba(116, 2, 2, 0.05) 0px 4px 6px -2px;
-  /* border: 3px solid black; */
 }
 
-.Footer{
-  border: 3px solid black; 
-  position: absolute;
+.buttons {
+  background-color: black;
+  border: none;
+  color: whitesmoke;
+  /* border-bottom: 2px solid black; */
+}
 
-  
+.buttons:hover {
+  background: rgb(1, 4, 13);
+  background: linear-gradient(90deg, rgba(1, 4, 13, 1) 30%, rgba(28, 40, 45, 1) 53%, rgb(19, 20, 20) 100%, rgba(29, 253, 205, 1) 100%);
+  color: whitesmoke;
+
+}
+
+
+
+.nav-links {
+
+  font-size: 1.4rem;
+  border-bottom: 2px solid black;
+}
+
+.profile {
+  font-size: 2rem;
+  border: 2px solid black;
+  border-radius: 50%;
+
+}
+
+.nav-links:hover {
+  border-top: 2px solid black;
+  /* border-bottom: 2px solid rgba(129, 125, 125, 0); */
+}
+
+.Header {
+  /* background-color: rgba(185, 88, 88, 0.05); Adjust the alpha channel as needed */
+  box-shadow: rgba(143, 3, 3, 0.1) 0px 10px 15px -3px, rgba(116, 2, 2, 0.05) 0px 4px 6px -2px;
+  /* border: 3px solid black; */
+
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+  /* letter-spacing: 1px; */
+}
+
+.Footer {
+  border: 3px solid rgb(223, 204, 240);
+  position: absolute;
+  background-color: #020a18;
+  background-image: linear-gradient(315deg, #70a1ff 0%, #c2c0c0 74%);
+  font-size: larger;
+
+}
+
+
+.edit-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(7, 10, 27);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.edit-svgIcon {
+  width: 17px;
+  transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+  fill: white;
+}
+
+.edit-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.edit-button:hover .edit-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.edit-button::before {
+  display: none;
+  content: "Edit";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.edit-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+/* delete icon */
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(221, 4, 4);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+
+
+
+/* Custom radio button style */
+.radio-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background-color: #fff;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Use background image for the checked state */
+input[type="radio"]:checked+.radio-dot {
+  background-image: url("https://t4.ftcdn.net/jpg/03/06/58/87/240_F_306588739_MMAbQ9FqfqOy1YXYupNmNXPvbabemtTy.jpg");
+  background-size: cover;
+  /* Adjust background size to cover the entire element */
+  background-color: green;
+  /* Remove the background color */
+  border: none;
+  /* Removeorder when checked */
+}
+
+/* Hide the default radio dot when checked */
+input[type="radio"]:checked+.radio-dot::before {
+  content: "";
+  /* Remove content */
+}
+
+/* Example of increasing specificity */
+body .container input[type="radio"]:checked+.radio-dot {
+  /* Add more specific styles if necessary */
+}
+
+.question-container label {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.name {
+  background-image: url("https://i.stack.imgur.com/IPUzy.jpg");
+  background-size: cover;
+  /* background-position: center; */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* medial queries */
+/* Home page */
+@media (max-width: 550px) {
+  .Header button {
+
+    font-size: 1.3rem;
+    margin-left: 30px;
+  }
+
+  .Header img {
+    width: 60px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .name-form {
+    width: 80vw;
+  }
+
+  .singleform-container {
+    /* font-size: 0.8rem; */
+    display: inline-block;
+    flex-direction: row;
+    margin-right: 30px;
+  }
+
+  .singleform-container div {
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 1120px) {
+  footer {
+    bottom: 0px;
+  }
+
+  .name-form {
+    width: 30vw;
+
+  }
+}
+
+@media (max-width: 800px) {
+  .container table {
+
+    font-size: 12px
+  }
+
+  .container .group {
+    background-color: red;
+    /* width: 13px; */
+  }
+
+  .profile-container {
+    position: absolute;
+    /* background-color: red; */
+    top: 5%;
+    right: 6%;
+  }
+
+  .my-quiz {
+    /* background-color: red; */
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 730px) {
+  .card-container div {
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    margin-bottom: 10%;
+
+
+  }
+
+  .name-form {
+    width: 80vw;
+  }
+
+  .card-container {
+    margin-left: 20%;
+    margin-right: 10%;
+  }
+
+  .card-container div .buttons {
+    /* bottom: 2px; */
+  }
+}
+
+@media (max-width: 400px) {
+  .Header button {
+
+    font-size: 1rem;
+    margin-left: 30px;
+  }
+
+  .card-container div {
+
+    height: 90%;
+    margin-bottom: 10%;
+    font-size: 1rem;
+
+  }
+
+  .card-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1rem;
+  }
+
+  .profile-container {
+    position: absolute;
+    top: 17%;
+    right: 6%;
+  }
+
+  .quiz-options {
+    font-size: 19rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 330px) {
+  .Header button {
+
+    font-size: 0.9rem;
+    /* margin-left: 16px; */
+  }
+}
+
+@media (max-width: 200px) {
+  .Header button {
+
+    font-size: 0.7rem;
+    margin-left: 27px;
+    margin-top: 10px;
+  }
 }

@@ -1,16 +1,16 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { addQuestion, clearQuestions } from "../store/questionsSlice";
 import QuizContext from "../data/QuizContext";
 import { FiDelete } from "react-icons/fi";
+
 function SingleAnswerForm() {
   const {
     currentQuestion,
     handleTitleChange,
     handleQuestionChange,
     handleOptionChange,
-
     handleCorrectAnswerChange,
     handleAddOption,
     handleDeleteOption,
@@ -18,14 +18,57 @@ function SingleAnswerForm() {
   } = useContext(QuizContext);
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions);
+
+  const [errors, setErrors] = useState({
+    title: "",
+    question: "",
+    options: [],
+    correctAnswer: "",
+  });
+
   const handleDeleteQuestion = (index) => {
     const updatedQuestions = [...questions];
     updatedQuestions.splice(index, 1);
-    dispatch(clearQuestions()); // Clear existing questions
-    updatedQuestions.forEach((question) => dispatch(addQuestion(question))); // Add updated questions
+    dispatch(clearQuestions());
+    updatedQuestions.forEach((question) => dispatch(addQuestion(question)));
+    localStorage.setItem("questions", JSON.stringify(updatedQuestions));
   };
+
   const handleAddQuestion = () => {
+    const titleError =
+      currentQuestion.title.length < 5 || currentQuestion.title.length > 50
+        ? "Full Name should be between 5 and 50 characters."
+        : "";
+
+    const questionError =
+      currentQuestion.question.length < 10 ||
+      currentQuestion.question.length > 200
+        ? "Question length should be between 10 and 200 characters."
+        : "";
+
+    const optionsError =
+      currentQuestion.options.length < 2
+        ? "At least two options are required to save the question."
+        : "";
+if(optionsError){
+  alert("At least two options are required to save the question.")
+}
+    const errorsCopy = {
+      title: titleError,
+      question: questionError,
+      options: currentQuestion.options.map(() => ""),
+      correctAnswer: "",
+    };
+
+    setErrors(errorsCopy);
+
+    if (titleError || questionError || optionsError) {
+      return;
+    }
+
+    const updatedQuestions = [...questions, currentQuestion];
     dispatch(addQuestion(currentQuestion));
+    localStorage.setItem("questions", JSON.stringify(updatedQuestions));
     setCurrentQuestionData({
       title: "",
       question: "",
@@ -38,10 +81,15 @@ function SingleAnswerForm() {
         hour: "numeric",
         minute: "numeric",
         second: "numeric",
-      }), // Format as "12 Apr 2024, 10:30:45 AM"
+      }),
     });
-    console.log("add", questions);
   };
+
+  useEffect(() => {
+    const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+    dispatch(clearQuestions());
+    storedQuestions.forEach((question) => dispatch(addQuestion(question)));
+  }, [dispatch]);
 
   const handleSave = () => {
     const questionsWithTime = questions.map((question) => ({
@@ -53,32 +101,35 @@ function SingleAnswerForm() {
         hour: "numeric",
         minute: "numeric",
         second: "numeric",
-      }), // Format as "12 Apr 2024, 10:30:45 AM"
+      }),
     }));
     localStorage.setItem("questions", JSON.stringify(questionsWithTime));
     alert("Questions created successfully!");
-    dispatch(clearQuestions());
-    console.log("save", questions);
   };
 
   return (
-    <div className="flex">
-      {/* Left side: Form for single MCQ question */}
-      <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem]">
+    <div className="flex singleform-container">
+      <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem] mt-3">
         <label className="block mb-2 font-semibold">Title:</label>
         <input
           type="text"
           value={currentQuestion.title}
           onChange={handleTitleChange}
-          className="w-full p-2 mb-4 border rounded focus:outline-none focus:border-blue-500"
+          className={`w-full p-2 mb-4 border rounded focus:outline-none focus:border-blue-500 ${
+            errors.title && "border-red-500"
+          }`}
         />
+        {errors.title && <p className="text-red-500 mt-1">{errors.title}</p>}
 
         <label className="block mb-2 font-semibold">Question:</label>
         <textarea
           value={currentQuestion.question}
           onChange={handleQuestionChange}
-          className="w-full p-2 mb-4 border rounded focus:outline-none focus:border-blue-500"
+          className={`w-full p-2 mb-4 border rounded focus:outline-none focus:border-blue-500 ${
+            errors.question && "border-red-500"
+          }`}
         />
+        {errors.question && <p className="text-red-500 mt-1">{errors.question}</p>}
 
         <label className="block mb-2 font-semibold">Options:</label>
         {currentQuestion.options.map((option, index) => (
@@ -87,12 +138,18 @@ function SingleAnswerForm() {
               type="text"
               value={option.text}
               onChange={(e) => handleOptionChange(index, e.target.value)}
-              className="w-3/4 p-2 border rounded-l focus:outline-none focus:border-blue-500"
+              className={`w-3/4 p-2 border rounded-l focus:outline-none focus:border-blue-500 ${
+                errors.options[index] && "border-red-500"
+              }`}
             />
-
             <button onClick={() => handleDeleteOption(index)}>
               <MdDelete style={{ color: "red", fontSize: "2rem" }} />
             </button>
+            {errors.options[index] && (
+              <p className="text-red-500 mt-1"></p>
+            )}
+ {/* {errors.title && <p className="text-red-500 mt-1">{errors.title}</p>} */}
+            
           </div>
         ))}
 
@@ -100,7 +157,10 @@ function SingleAnswerForm() {
         <select
           value={currentQuestion.correctAnswer}
           onChange={handleCorrectAnswerChange}
-          className="w-full p-2 mb-4 border rounded focus:outline-none focus:border-blue-500">
+          className={`w-full p-2 mb-4 border rounded focus:outline-none focus:border-blue-500 ${
+            errors.correctAnswer && "border-red-500"
+          }`}
+        >
           {currentQuestion.options.map((option, index) => (
             <option key={index} value={index + 1}>
               <b className="font-bold">Option {index + 1} -</b>
@@ -108,30 +168,34 @@ function SingleAnswerForm() {
             </option>
           ))}
         </select>
+        {errors.correctAnswer && (
+          <p className="text-red-500 mt-1">{errors.correctAnswer}</p>
+        )}
 
         <button
           onClick={handleAddOption}
-          className="w-full p-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700">
+          className="w-full p-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700"
+        >
           Add Option
         </button>
 
         <button
           onClick={handleAddQuestion}
-          className="w-full p-2 mt-4 bg-green-500 text-white rounded hover:bg-green-700">
+          className="w-full p-2 mt-4 bg-green-500 text-white rounded hover:bg-green-700"
+        >
           Add Question
         </button>
 
         <hr className="my-4" />
 
-        {/* Button to save questions and display modal */}
         <button
           onClick={handleSave}
-          className="w-full p-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700">
+          className="w-full p-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700"
+        >
           Save Questions
         </button>
       </div>
 
-      {/* Right side: Display added questions */}
       <div className="top-3">
         {questions.map((question, index) => (
           <div key={index} className="mb-4 p-4 top-3 border rounded relative">

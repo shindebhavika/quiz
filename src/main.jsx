@@ -9,6 +9,7 @@ import HomePage from "./routes/HomePage.jsx"
 import CreateQuizPage from "./routes/CreateQuizPage.jsx";
 import StorageManger from "./store/index.js";
 import MyQuizes from "./components/MyQuizes.jsx";
+import PlayQuiz from "./components/PlayQuiz.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
       },{
         path:"/my-quizes",
         element:<MyQuizes/>
+      },{
+        path:"/Play-Quiz",
+        element:<PlayQuiz/>
       }
     ],
   }

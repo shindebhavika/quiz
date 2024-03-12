@@ -1,6 +1,10 @@
-import React from 'react';
+import React from "react";
 
-function CreateQuizLanding({ closeForm, selectedOption, handleSelectedOption }) {
+function CreateQuizLanding({
+  closeForm,
+  selectedOption,
+  handleSelectedOption,
+}) {
   const handleRadioClick = (index) => {
     // Only handle the click if the selected option is different
     if (selectedOption !== index) {
@@ -9,20 +13,24 @@ function CreateQuizLanding({ closeForm, selectedOption, handleSelectedOption }) 
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900 gap-5">
-      <form className="bg-white rounded shadow-md p-[4rem]">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900">
+      <form className="bg-white rounded shadow-md p-[4rem] relative">
+        {/* Close button */}
         <button
-          className="absolute top-[24rem] text-gray-500 hover:text-gray-800 right-[35rem]"
-          onClick={closeForm}
-        >
+          className="text-gray-500 hover:text-gray-800 absolute top-4 right-4"
+          onClick={closeForm}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
 
@@ -40,9 +48,10 @@ function CreateQuizLanding({ closeForm, selectedOption, handleSelectedOption }) 
             onClick={closeForm}
           />
           <label
-            className={`btn ${selectedOption === 0 ? 'btn-primary' : 'btn-outline-primary '}`}
-            htmlFor="btn-check"
-          >
+            className={`btn ${
+              selectedOption === 0 ? "btn-primary" : "btn-outline-primary "
+            }`}
+            htmlFor="btn-check">
             MCQ(Single Answer)
           </label>
         </div>
@@ -60,9 +69,10 @@ function CreateQuizLanding({ closeForm, selectedOption, handleSelectedOption }) 
             onClick={closeForm}
           />
           <label
-            className={`btn ${selectedOption === 1 ? 'btn-primary' : 'btn-outline-primary'}`}
-            htmlFor="btn-check-2"
-          >
+            className={`btn ${
+              selectedOption === 1 ? "btn-primary" : "btn-outline-primary"
+            }`}
+            htmlFor="btn-check-2">
             MCQ(Multiple Answer)
           </label>
         </div>

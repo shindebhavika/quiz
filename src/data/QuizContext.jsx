@@ -3,12 +3,16 @@ import { createContext, useState } from "react";
 const QuizContext = createContext();
 
 export const QuizContextProvider = ({ children }) => {
+
+ 
+  const [name, setName] = useState("")
+
   const [currentQuestion, setCurrentQuestion] = useState({
     title: "",
     question: "",
     options: [{ text: "", isCorrect: false }],
     correctAnswer: 1,
-    time:""
+    time: "",
   });
 
   const handleTitleChange = (e) => {
@@ -54,7 +58,6 @@ export const QuizContextProvider = ({ children }) => {
   const setCurrentQuestionData = (data) => {
     setCurrentQuestion(data);
   };
-  
 
   return (
     <QuizContext.Provider
@@ -68,6 +71,7 @@ export const QuizContextProvider = ({ children }) => {
         handleAddOption,
         handleDeleteOption,
         setCurrentQuestionData,
+        name, setName
       }}>
       {children}
     </QuizContext.Provider>

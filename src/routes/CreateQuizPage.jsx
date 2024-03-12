@@ -1,7 +1,6 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import CreateQuizLanding from './CreateQuizLanding';
 import SingleAnswerForm from '../components/SingleAnswerForm';
-
 
 function CreateQuizPage() {
   const [isOpen, setIsOpen] = useState(true);
@@ -14,12 +13,20 @@ function CreateQuizPage() {
   const handleSelectedOption = (index) => {
     setSelectedOption(index);
   };
+  // localStorage.clear()
 
   return (
     <>
-      {isOpen && <CreateQuizLanding closeForm={closeForm} selectedOption={selectedOption} handleSelectedOption={handleSelectedOption} />}
-      {selectedOption=="0"&&<SingleAnswerForm/>}
-  
+      {isOpen && (
+        <CreateQuizLanding
+          closeForm={closeForm}
+          selectedOption={selectedOption}
+          handleSelectedOption={handleSelectedOption}
+        />
+      )}
+      {!isOpen && (selectedOption === 0 || selectedOption === 1) && (
+        <SingleAnswerForm />
+      )}
     </>
   );
 }
