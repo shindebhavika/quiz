@@ -62,7 +62,7 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
           Create New Quiz
         </button>
       </Link>
-
+      {questions.length > 0 ? (
       <table className="min-w-full bg-white border border-gray-300 table-data">
         <thead>
           <tr>
@@ -126,7 +126,11 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
             </tr>
           ))}
         </tbody>
-      </table>
+      </table>  ) : (
+        <h1 className="text-xl text-gray-600 mt-8 mb-4">
+          Add at least one question.
+        </h1>
+      )}
 
       {deleteModal && (
         <CustomModal
