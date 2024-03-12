@@ -45,13 +45,13 @@
 
 .nav-links:hover {
   border-top: 2px solid black;
-  
+
 }
 
 .Header {
- 
+
   box-shadow: rgba(143, 3, 3, 0.1) 0px 10px 15px -3px, rgba(116, 2, 2, 0.05) 0px 4px 6px -2px;
-  
+
 
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
@@ -217,19 +217,21 @@ input[type="radio"] {
   opacity: 0;
   cursor: pointer;
 }
-.profile-container{
+
+.profile-container {
   position: absolute;
 
-    top: 17%;
-    right: 6%;
+  top: 0.3%;
+  right: 6%;
 }
+
 /* Use background image for the checked state */
 input[type="radio"]:checked+.radio-dot {
   background-image: url("https://t4.ftcdn.net/jpg/03/06/58/87/240_F_306588739_MMAbQ9FqfqOy1YXYupNmNXPvbabemtTy.jpg");
   background-size: cover;
-  
+
   background-color: green;
- 
+
   border: none;
 
 }
@@ -292,7 +294,7 @@ body .container input[type="radio"]:checked+.radio-dot {
     margin-right: 30px;
   }
 
- 
+
 }
 
 @media (min-width: 1120px) {
@@ -317,15 +319,9 @@ body .container input[type="radio"]:checked+.radio-dot {
     /* width: 13px; */
   }
 
-  /* .profile-container {
-    position: absolute;
-    /* background-color: red; */
-    /* top: 5%; */
-    /* right: 6%; */
-  /* } */ 
 
   .my-quiz {
-    /* background-color: red; */
+
     font-size: 14px;
     padding: 0;
     margin: 0;
@@ -335,7 +331,7 @@ body .container input[type="radio"]:checked+.radio-dot {
 
 @media (max-width: 730px) {
   .card-container div {
-    /* background-color: red; */
+
     justify-content: center;
     align-items: center;
     height: 90%;
@@ -353,15 +349,14 @@ body .container input[type="radio"]:checked+.radio-dot {
     margin-right: 10%;
   }
 
-  .my-quiz{
+  .my-quiz {
     width: 650px;
     margin-right: 10px;
     padding: 0;
   }
-  .table-data tr td{
-  
-  }
- 
+
+  .table-data tr td {}
+
 
 }
 
@@ -370,11 +365,14 @@ body .container input[type="radio"]:checked+.radio-dot {
   .Header button {
 
     font-size: 1rem;
-    margin-left: 30px;
+    margin-left: 3px;
   }
-  .quiz-container{
-    top: 12%;
-    }
+
+  .quiz-container {
+    top: 2%;
+    width: 700px;
+  }
+
   .card-container div {
 
     height: 90%;
@@ -383,43 +381,49 @@ body .container input[type="radio"]:checked+.radio-dot {
 
   }
 
+  .result-btns button {
+    margin-left: 10px;
+    margin-right: 50px;
+  }
+
   .card-container {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 1rem;
   }
 
-  .profile-container {
-    position: absolute;
-    top: 17%;
-    right: 6%;
-  }
+
 
   .quiz-options {
     font-size: 19rem;
     padding: 0;
   }
-  .quiz-container button{
+
+  .quiz-container button {
     width: 100px;
     font-size: 10px;
   }
+
   .quiz-container {
-    width: 300px;
+    width: 400px;
     font-size: 13px;
   }
-  .quiz-container h1{
+
+  .quiz-container h1 {
 
     font-size: 18px;
   }
-  .question-container label{
+
+  .question-container label {
     height: 40px;
-   
+    width: 300px;
   }
+
   .quiz-container button {
-   width: 150px;
+    width: 200px;
     font-size: 14px;
     height: 50px;
-   
+
   }
 }
 
@@ -427,8 +431,9 @@ body .container input[type="radio"]:checked+.radio-dot {
   .Header button {
 
     font-size: 0.9rem;
-    
+
   }
+
   .singleform-container {
     /* font-size: 0.8rem; */
     display: inline-block;
@@ -442,23 +447,31 @@ body .container input[type="radio"]:checked+.radio-dot {
     width: 400px;
   }
 }
-@media (max-width: 400px){
-  
+
+@media (max-width: 400px) {
+
 
   .singleform-container div {
     margin-right: 5px;
     width: 360px;
   }
 }
-@media (max-width: 360px){
-  
+
+@media (max-width: 360px) {
+
 
   .singleform-container div {
     margin-right: 5px;
     width: 300px;
   }
-  
+
+  .result-btns button {
+    margin-left: 10px;
+    margin-right: 50px;
+  }
+
 }
+
 @media (max-width: 200px) {
   .Header button {
 
@@ -469,15 +482,10 @@ body .container input[type="radio"]:checked+.radio-dot {
 }
 
 
-@media(min-width: 400px)and (max-width: 610px){
-  .quiz-container{
+@media(min-width: 400px)and (max-width: 610px) {
+  .quiz-container {
     top: 14%;
-    }
-  
-  
-  .profile-container {
-    position: absolute;
-    top: 6%;
-    right: 2%;
   }
+
+
 }

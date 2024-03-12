@@ -66,6 +66,28 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
 
   return (
     <div className="fixed top-20 left-0 w-full h-full flex items-center justify-center quiz-container">
+      {name.length>5 && (
+            <button className="profile-container">
+               <div className="flex items-center justify-center ">
+                <div className="w-22 rounded-lg bg-transparent p-2 text-center shadow-md dark:bg-gray-800">
+                  <figure className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      className="bi bi-person-fill text-white dark:text-indigo-300"
+                      viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                    </svg>
+                  </figure>
+                  <h2 className="mt-1 text-sm font-bold text-indigo-600 dark:text-indigo-400">
+                    {name}
+                  </h2>
+                </div>
+              </div>
+            </button>
+            )}
       <form className="bg-white rounded shadow-md p-8 w-[400px]">
         {allQuestions.length === 0 ? (
          <h1 className="text-red">No questions are available</h1>
@@ -88,7 +110,7 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
               </div>
             )}
             {displayResult ? (
-             <div>
+             <div className="result-btns">
                <button
                 type="button"
                 className="px-6 py-3 bg-green-400 text-white rounded-md hover:bg-green-800 mt-4 text-[20px] quiz-options"
@@ -104,7 +126,7 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
               type="button"
               className="px-6 py-3 bg-blue-400 text-white rounded-md hover:bg-blue-800 mt-4 text-[20px] quiz-options ml-4"
               onClick={() => {
-              
+              setName("")
               }}>
               Go Home
             </button>

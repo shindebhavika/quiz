@@ -87,39 +87,8 @@ if(optionsError){
 
   useEffect(() => {
     const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
-
-    // If there are no questions in local storage, add two default questions
-    if (storedQuestions.length === 0) {
-      const defaultQuestions = [
-        {
-          title: "Default Question 1",
-          question: "What is your favorite color?",
-          options: [
-            { text: "Red", isCorrect: false },
-            { text: "Blue", isCorrect: true },
-          ],
-          correctAnswer: 2,
-        },
-        {
-          title: "Default Question 2",
-          question: "What is the capital of France?",
-          options: [
-            { text: "Berlin", isCorrect: false },
-            { text: "Paris", isCorrect: true },
-          ],
-          correctAnswer: 2,
-        },
-      ];
-
-      // Dispatch and save default questions to local storage
-      dispatch(clearQuestions());
-      defaultQuestions.forEach((question) => dispatch(addQuestion(question)));
-      localStorage.setItem("questions", JSON.stringify(defaultQuestions));
-    } else {
-      // If there are questions in local storage, dispatch and load them
-      dispatch(clearQuestions());
-      storedQuestions.forEach((question) => dispatch(addQuestion(question)));
-    }
+    dispatch(clearQuestions());
+    storedQuestions.forEach((question) => dispatch(addQuestion(question)));
   }, [dispatch]);
 
   const handleSave = () => {
@@ -139,7 +108,7 @@ if(optionsError){
   };
 
   return (
-    <div className="flex singleform-container">
+    <div className="flex singleform-contr">
       <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem] mt-3">
         <label className="block mb-2 font-semibold">Title:</label>
         <input
