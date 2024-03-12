@@ -27,3 +27,55 @@ export const CardData = [
     route:"/MY-Quizes" 
   },
 ];
+
+
+export const question = [
+  {
+    title: "javascript",
+    question: "Which type of JavaScript language is ___",
+    correctAnswer: 2,
+    options: [
+      { text: "Object-Oriented", isCorrect: false },
+      { text: "Object-Based", isCorrect: false },
+      
+{text: "Assembly-language", isCorrect: false},
+{text: "High-level", isCorrect: false}
+    ],
+    status: "active",
+    time: "Mar 12, 2024, 11:58:34 AM",
+    
+  },
+  {
+    title: "javascript",
+    question: "Which of the following keywords is used to define a variable in Javascript?",
+    correctAnswer: 2,
+    options: [
+      { text: "var", isCorrect: false },
+      { text: "let", isCorrect: false },
+      
+{text: "Both A and B", isCorrect: false},
+{text: "none of these", isCorrect: false}
+    ],
+    status: "active",
+    time: "Mar 12, 2024, 11:58:34 AM",
+    
+  },
+  {
+    title: "javascript",
+    question: "The function and  var are known as",
+    correctAnswer: 2,
+    options: [
+      { text: "Keywords", isCorrect: false },
+      { text: "Data types", isCorrect: false },
+      
+{text: "Declaration statements", isCorrect: false},
+{text: "Prototypes", isCorrect: false}
+    ],
+    status: "active",
+    time: "Mar 12, 2024, 11:58:34 AM",
+    
+  },
+];
+
+
+

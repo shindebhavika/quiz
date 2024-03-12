@@ -14,8 +14,10 @@ function CreateQuizLanding({
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900">
+      
       <form className="bg-white rounded shadow-md p-[4rem] relative">
-        {/* Close button */}
+       
+        <h1 className="mb-3 text-xl text-slate-950">Select type</h1>
         <button
           className="text-gray-500 hover:text-gray-800 absolute top-4 right-4"
           onClick={closeForm}>
@@ -74,6 +76,48 @@ function CreateQuizLanding({
             }`}
             htmlFor="btn-check-2">
             MCQ(Multiple Answer)
+          </label>
+        </div>
+        <br />
+        <div>
+          <input
+            type="radio"
+            name="options"
+            value="MultipleAnswer"
+            className="btn-check"
+            id="btn-check-2"
+            autoComplete="off"
+            checked={selectedOption === 1}
+            onChange={() => handleRadioClick(1)}
+            onClick={closeForm}
+          />
+          <label
+            className={`btn ${
+              selectedOption === 1 ? "btn-primary" : "btn-outline-primary"
+            }`}
+            htmlFor="btn-check-2">
+            Short Answer(1 or 2 words)
+          </label>
+        </div>
+        <br />
+        <div>
+          <input
+            type="radio"
+            name="options"
+            value="MultipleAnswer"
+            className="btn-check"
+            id="btn-check-2"
+            autoComplete="off"
+            checked={selectedOption === 1}
+            onChange={() => handleRadioClick(1)}
+            onClick={closeForm}
+          />
+          <label
+            className={`btn ${
+              selectedOption === 1 ? "btn-primary" : "btn-outline-primary"
+            }`}
+            htmlFor="btn-check-2">
+           Description( 1 or 2 sentnce)
           </label>
         </div>
       </form>

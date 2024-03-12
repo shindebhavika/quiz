@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { addQuestion, clearQuestions } from "../store/questionsSlice";
 import QuizContext from "../data/QuizContext";
 import { FiDelete } from "react-icons/fi";
+import { question } from "../data/items";
 
 function SingleAnswerForm() {
   const {
@@ -16,6 +17,7 @@ function SingleAnswerForm() {
     handleDeleteOption,
     setCurrentQuestionData,
   } = useContext(QuizContext);
+
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions);
 
@@ -50,9 +52,11 @@ function SingleAnswerForm() {
       currentQuestion.options.length < 2
         ? "At least two options are required to save the question."
         : "";
-if(optionsError){
-  alert("At least two options are required to save the question.")
-}
+
+    if (optionsError) {
+      alert("At least two options are required to save the question.");
+    }
+
     const errorsCopy = {
       title: titleError,
       question: questionError,
@@ -86,6 +90,7 @@ if(optionsError){
   };
 
   useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(question ));
     const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
     dispatch(clearQuestions());
     storedQuestions.forEach((question) => dispatch(addQuestion(question)));
@@ -108,8 +113,8 @@ if(optionsError){
   };
 
   return (
-    <div className="flex singleform-contr">
-      <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem] mt-3">
+    <div className="flex ">
+      <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem] mt-4">
         <label className="block mb-2 font-semibold">Title:</label>
         <input
           type="text"
