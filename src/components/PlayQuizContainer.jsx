@@ -65,7 +65,7 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
   };
 
   return (
-    <div className="fixed top-10 left-0 w-full h-full flex items-center justify-center quiz-container">
+    <div className="fixed top-20 left-0 w-full h-full flex items-center justify-center quiz-container">
       <form className="bg-white rounded shadow-md p-8 w-[400px]">
         {allQuestions.length === 0 ? (
          <h1 className="text-red">No questions are available</h1>

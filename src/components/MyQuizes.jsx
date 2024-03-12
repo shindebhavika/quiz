@@ -49,7 +49,7 @@ function MyQuizes() {
 
   return (
     <div className="container mx-auto px-4 py-8 my-quiz">
-      <h1 className="text-3xl font-bold mb-4">Question List</h1>
+      <h1 className="text-3xl font-bold mt-4 mb-4">Question List</h1>
 
       <Link to="/" className="flex items-center">
         {" "}
@@ -93,13 +93,13 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
                     }
                   />
                   <div
-                    className={`group peer ring-0 bg-gradient-to-tr ${
+                    className={`group peer ring-0 bg-gradient-to-tr toggle ${
                       question.status === "active"
                         ? "from-emerald-500 via-lime-400 to-lime-500"
                         : "from-rose-100 via-rose-400 to-rose-500"
                     }  rounded-full outline-none duration-300 after:duration-300 w-15 h-10  shadow-md  peer-checked:bg-emerald-500  peer-focus:outline-none  after:content-['✖️']  after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:h-8 after:w-10 after:top-1 after:left-1 after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:translate-x-10 peer-checked:after:content-['✔️'] peer-hover:after:scale-95 peer-checked:after:rotate-0 w-[92px] h-13`}></div>
                   <div className="ml-[20px] font-semibold ">
-                    {" "}
+                
                     {question.status === "active" ? "Active" : "Inactive"}
                   </div>
                 </label>
