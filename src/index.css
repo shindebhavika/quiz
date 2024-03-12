@@ -7,6 +7,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* utility classes */
+.page-container {
+  width: 80%;
+  margin: 0 auto;
+}
 .scroll-container{
   /* overflow: hidden; */
 }
@@ -37,12 +43,6 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: #288fd3b0; 
 }
-/* utility classes */
-.page-container {
-  width: 10px;
-  margin: 0 auto;
-}
-
 .buttons {
   background-color: black;
   border: none;
