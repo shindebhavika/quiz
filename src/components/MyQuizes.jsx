@@ -62,7 +62,7 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
           Create New Quiz
         </button>
       </Link>
-      {questions.length > 0 ? (
+      {questions  ? (
       <table className="min-w-full bg-white border border-gray-300 table-data">
         <thead>
           <tr>
