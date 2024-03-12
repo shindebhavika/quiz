@@ -268,7 +268,7 @@ input[type="radio"]:checked+.radio-dot {
 /* Hide the default radio dot when checked */
 input[type="radio"]:checked+.radio-dot::before {
   content: "";
-  /* Remove content */
+
 }
 
 
@@ -476,7 +476,7 @@ body .container input[type="radio"]:checked+.radio-dot {
 
   .singleform-container div {
     margin-right: 5px;
-    /* width: 360px; */
+  
   }
 }
 
@@ -511,21 +511,21 @@ body .container input[type="radio"]:checked+.radio-dot {
   }
 
   .singleform-container  {
-    /* font-size: 0.8rem; */
+   
     display: inline-block;
     flex-direction: row;
     margin-right: 40px;
     
-    /* background-color: red; */
+
   }
 
 }
 
 @media(max-width:600px){
   .Header{
-    /* width: 660px; */
+    width: 660px;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
   }
   header{
@@ -539,3 +539,48 @@ body .container input[type="radio"]:checked+.radio-dot {
 
   }
 }
+
+
+@media(max-width:375px){
+.Footer{
+  width:180vw
+}
+.singleform-container{
+  width: 700px;
+}
+.singleform-container div  {
+ 
+  width: 100%;
+
+}
+body{
+  font-size: 20px;
+}
+.Header button {
+
+  font-size: 18px;
+
+}
+}
+
+@media(min-width:378px) and(max-width:414px){
+  .Footer{
+    width:200vw
+  }
+ .singleform-container{
+    width: 800px;
+  }
+  .singleform-container div  {
+   
+    width: 100%;
+  
+  }
+  body{
+    font-size: 20px;
+  }
+ .Header button { 
+  
+ font-size: 18px; 
+ 
+  }}
+  
