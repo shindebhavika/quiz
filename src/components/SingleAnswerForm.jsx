@@ -87,25 +87,38 @@ if(optionsError){
 
   useEffect(() => {
     const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
-    dispatch(clearQuestions());
-    storedQuestions.forEach((question) => dispatch(addQuestion(question)));
-  }, [dispatch]);
+    if (storedQuestions.length === 0) {
+      const defaultQuestions = [
+        {
+          title: "Default Question 1",
+          question: "What is your favorite color?",
+          options: [
+            { text: "Red", isCorrect: false },
+            { text: "Blue", isCorrect: true },
+          ],
+          correctAnswer: 2,
+        },
+        {
+          title: "Default Question 2",
+          question: "What is the capital of France?",
+          options: [
+            { text: "Berlin", isCorrect: false },
+            { text: "Paris", isCorrect: true },
+          ],
+          correctAnswer: 2,
+        },
+      ];
 
-  const handleSave = () => {
-    const questionsWithTime = questions.map((question) => ({
-      ...question,
-      time: new Date().toLocaleString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-      }),
-    }));
-    localStorage.setItem("questions", JSON.stringify(questionsWithTime));
-    alert("Questions created successfully!");
-  };
+      // Dispatch and save default questions to local storage
+      dispatch(clearQuestions());
+      defaultQuestions.forEach((question) => dispatch(addQuestion(question)));
+      localStorage.setItem("questions", JSON.stringify(defaultQuestions));
+    } else {
+      // If there are questions in local storage, dispatch and load them
+      dispatch(clearQuestions());
+      storedQuestions.forEach((question) => dispatch(addQuestion(question)));
+    }
+  }, [dispatch]);
 
   return (
     <div className="flex singleform-container">
