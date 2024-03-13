@@ -88,11 +88,11 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
               </div>
             </button>
             )}
-      <form className="bg-white rounded shadow-md p-8 w-[400px]">
+      <form className="bg-white rounded shadow-md p-8 w-[400px] result-form">
         {allQuestions.length === 0 ? (
          <h1 className="text-red">No questions are available</h1>
         ) : showScore ? (
-          <div className="text-center">
+          <div className="text-center result">
             <p className="text-xl font-semibold mb-4">Quiz Completed  ✌️</p>
             {displayResult && (
               <div>
@@ -104,7 +104,7 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
                 <p className="text-xl font-semibold mb-4">
                   Congratulatons <span className="text-red-700 name">{name}</span>
                 </p>
-                <p>
+                <p className="score">
                   Your Score: {score} out of {allQuestions.length}
                 </p>
               </div>

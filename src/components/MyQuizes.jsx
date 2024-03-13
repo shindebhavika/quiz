@@ -58,7 +58,7 @@ function MyQuizes() {
           className="cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg  ml-[70%] mb-5
 border-blue-600
 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+active:border-b-[2px] active:brightness-90 active:translate-y-[2px] create-quiz-btn">
           Create New Quiz
         </button>
       </Link>

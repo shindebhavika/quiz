@@ -13,7 +13,7 @@ function CreateQuizLanding({
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900 select-type p-3">
       
       <form className="bg-white rounded shadow-md p-[4rem] relative">
        

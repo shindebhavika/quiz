@@ -124,8 +124,8 @@ function EditModal({ editIndex, toggleEditModal, updateQuestion }) {
   }
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900 gap-5">
-      <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem]">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900 gap-5 edit-modal">
+      <div className="max-w-lg p-4 bg-white rounded shadow mr-4 w-[50rem] ">
         <label className="block mb-2 font-semibold">Title:</label>
         <input
           type="text"

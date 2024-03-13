@@ -1,7 +1,7 @@
 function CustomModal({ toggleDeleteModal, deleteQuestion }) {
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900 gap-5">
-      <form className="bg-white rounded shadow-md p-[4rem] relative">
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-gray-900 gap-5 ">
+      <form className="bg-white rounded shadow-md p-[4rem] relative  delete-modal">
         <button
           className="text-gray-500 hover:text-gray-800 absolute top-4 right-4"
           onClick={() => {

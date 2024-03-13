@@ -48,7 +48,7 @@ export const question = [
   {
     title: "javascript",
     question: "Which of the following keywords is used to define a variable in Javascript?",
-    correctAnswer: 2,
+    correctAnswer: 3,
     options: [
       { text: "var", isCorrect: false },
       { text: "let", isCorrect: false },
@@ -75,7 +75,39 @@ export const question = [
     time: "Mar 12, 2024, 11:58:34 AM",
 
   },
+  {
+    title: "General",
+    question: "who is the king of fruits?",
+    correctAnswer: 3,
+    options: [
+      { text: "orange", isCorrect: false },
+      { text: "apple", isCorrect: false },
+
+      { text: "mango", isCorrect: false },
+      { text: "coconut", isCorrect: false }
+    ],
+    status: "active",
+    time: "Mar 12, 2024, 11:58:34 AM",
+
+  },
+  {
+    title: "General",
+    question: "income tax in india was introduced by: ?",
+    correctAnswer: 2,
+    options: [
+      { text: "William Jones", isCorrect: false },
+      { text: "James Wilson", isCorrect: false },
+
+      { text: "Nicholas Kaldo", isCorrect: false },
+      { text: "Mahavir Tyagi", isCorrect: false }
+    ],
+    status: "active",
+    time: "Mar 12, 2024, 11:58:34 AM",
+
+  }
 ];
-// localStorage.setItem("questions", JSON.stringify(question))
 
 
+
+
+  localStorage.setItem("questions", JSON.stringify(question))
