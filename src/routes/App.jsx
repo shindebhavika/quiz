@@ -17,7 +17,7 @@ function App() {
         <QuizContextProvider>
           {(!isPlaypage && <Navbar></Navbar>)}
           <Outlet />
-          {isHomePage && <Footer />}
+          {/* {isHomePage && <Footer />} */}
         </QuizContextProvider>
       </div>
     </>

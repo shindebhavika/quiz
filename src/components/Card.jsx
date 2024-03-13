@@ -10,7 +10,7 @@ function Card({ title, img, description, action, route }) {
   return (
     <Link to={route} className="card-link">
       <div
-        className="card rounded-md mt-5 min-h-[33rem] relative overflow-hidden transition-transform transform-gpu hover:scale-110 transition ease-in-out delay-150"
+        className="card rounded-md mt-5  relative overflow-hidden transition-transform transform-gpu hover:scale-110 transition ease-in-out delay-150 cards"
         style={{ width: "18rem" }}
       >
         <img src={img} className="card-img-top object-cover h-50 w-full" alt="Card Image" />
