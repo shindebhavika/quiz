@@ -43,11 +43,25 @@ export const QuizContextProvider = ({ children }) => {
   };
 
   const handleAddOption = () => {
+    const currentOptions = currentQuestion.options;
+  
+    // Check if there are any options
+    if (currentOptions.length > 0) {
+      // Check if the last option is not empty
+      const lastOption = currentOptions[currentOptions.length - 1];
+      if (lastOption.text.trim() === "") {
+        alert(" option text cannot be empty.");
+        return;
+      }
+    }
+  
+    // Add a new option
     setCurrentQuestion({
       ...currentQuestion,
-      options: [...currentQuestion.options, { text: "", isCorrect: false }],
+      options: [...currentOptions, { text: "", isCorrect: false }],
     });
   };
+  
 
   const handleDeleteOption = (index) => {
     const updatedOptions = [...currentQuestion.options];

@@ -18,6 +18,7 @@ function SingleAnswerForm() {
     setCurrentQuestionData,
   } = useContext(QuizContext);
 
+
   const dispatch = useDispatch();
   const questions = useSelector((state) => state.questions);
 
@@ -26,46 +27,52 @@ function SingleAnswerForm() {
     question: "",
     options: [],
     correctAnswer: "",
+    optionEmptyError:""
   });
-
-  const handleDeleteQuestion = (index) => {
-    const updatedQuestions = [...questions];
-    updatedQuestions.splice(index, 1);
-    dispatch(clearQuestions());
-    updatedQuestions.forEach((question) => dispatch(addQuestion(question)));
-    localStorage.setItem("questions", JSON.stringify(updatedQuestions));
-  };
-
+ 
   const handleAddQuestion = () => {
     const titleError =
       currentQuestion.title.length < 5 || currentQuestion.title.length > 50
-        ? "Full Name should be between 5 and 50 characters."
+        ? "Title should be between 5 and 50 characters."
         : "";
-
+  
     const questionError =
       currentQuestion.question.length < 10 ||
       currentQuestion.question.length > 200
         ? "Question length should be between 10 and 200 characters."
         : "";
-
+  
     const optionsError =
       currentQuestion.options.length < 2
         ? "At least two options are required to save the question."
         : "";
-
+  
+    const optionEmptyError = currentQuestion.options.some(
+      (option) => option.text.trim() === ""
+    )
+      ? "All options must have non-empty text."
+      : "";
+  
+    if (optionEmptyError) {
+      alert("All options must have non-empty text.");
+      return;
+    }
+  
     if (optionsError) {
       alert("At least two options are required to save the question.");
+      return;
     }
-
+  
     const errorsCopy = {
       title: titleError,
       question: questionError,
       options: currentQuestion.options.map(() => ""),
       correctAnswer: "",
+      optionEmptyError:optionEmptyError
     };
-
+  
     setErrors(errorsCopy);
-
+  
     if (titleError || questionError || optionsError) {
       return;
     }
@@ -177,13 +184,19 @@ function SingleAnswerForm() {
           <p className="text-red-500 mt-1">{errors.correctAnswer}</p>
         )}
 
-        <button
-          onClick={handleAddOption}
-          className="w-full p-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700"
-        >
-          Add Option
-        </button>
+<button
+  onClick={handleAddOption}
+  className="w-full p-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700"
+>
+  Add Option
+</button>
 
+
+
+
+
+
+       
         <button
           onClick={handleAddQuestion}
           className="w-full p-2 mt-4 bg-green-500 text-white rounded hover:bg-green-700"

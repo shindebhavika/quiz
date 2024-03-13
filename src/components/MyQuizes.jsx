@@ -52,7 +52,7 @@ function MyQuizes() {
     <div className="container mx-auto px-4 py-8 my-quiz">
       <h1 className="text-3xl font-bold mt-4 mb-4">Question List</h1>
 
-      <Link to="/" className="flex items-center">
+      <Link to="/Create-Quiz" className="flex items-center">
         {" "}
         <button
           className="cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg  ml-[70%] mb-5
