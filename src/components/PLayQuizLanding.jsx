@@ -12,7 +12,7 @@ function PLayQuizLanding({ isOpen, setIsOpen }) {
     const newName = nameRef.current.value;
 
     if (newName.length < 5) {
-      alert("Full Name of the user should be a minimum of 5 characters");
+      alert("Full Name of user should be minimum of 5 characters and maximum of 50 characters.");
     } else {
       setName(newName);
       nameRef.current.value = ""; 
@@ -31,7 +31,7 @@ function PLayQuizLanding({ isOpen, setIsOpen }) {
                 Welcome,
               </label>
               <span className="subtitle text-sm text-[17px]">
-                {" "}
+           
                 Enjoy interactive challenges with diverse topics, customizable
                 features, and easy sharing options for a fun and engaging
                 experience.

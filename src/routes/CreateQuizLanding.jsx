@@ -117,7 +117,7 @@ function CreateQuizLanding({
               selectedOption === 1 ? "btn-primary" : "btn-outline-primary"
             }`}
             htmlFor="btn-check-2">
-           Description( 1 or 2 sentnce)
+           Description( 1 or 2 sentence)
           </label>
         </div>
       </form>

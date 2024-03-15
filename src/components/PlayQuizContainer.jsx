@@ -93,7 +93,7 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
          <h1 className="text-red">No questions are available</h1>
         ) : showScore ? (
           <div className="text-center result">
-            <p className="text-xl font-semibold mb-4">Quiz Completed  ✌️</p>
+            <p className="text-xl font-semibold mb-4 completed">Quiz Completed  ✌️</p>
             {displayResult && (
               <div>
                 <img
@@ -135,7 +135,7 @@ function PlayQuizContainer({ setIsOpen, name, setName }) {
             ) : (
               <button
                 type="button"
-                className="px-6 py-3 bg-blue-700 text-white rounded-md hover:bg-blue-800 mt-4"
+                className="px-6 py-3 bg-blue-700 text-white rounded-md hover:bg-blue-800 mt-4 completed-1"
                 onClick={handleQuizSubmission}>
                 Submit Quiz
               </button>
