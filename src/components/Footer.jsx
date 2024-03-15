@@ -7,8 +7,11 @@ function Footer() {
           <li className="mr-4"><a href="#" className=" text-white">Features</a></li>
           <li className="mr-4"><a href="#" className=" text-white text-white">FAQs</a></li>
           <li><a href="#" className=" text-white">About</a></li>
+      
         </ul>
-        <p className="text-center  text-white animate-fade-in">© 2023 VISION, Inc</p>
+       
+        <p className="text-center  text-white animate-fade-in">  Created with ❤️ by Bhavika Shinde</p>
+      
       </div>
     </footer>
   );
