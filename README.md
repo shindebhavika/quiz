@@ -10,5 +10,5 @@ Currently, two official plugins are available:
 
 
 Uploading quiz_PpH8P7ty.mp4…
-
+![Content (5)](https://github.com/shindebhavika/quiz/assets/103195075/afd17284-073f-4bca-85fa-0c1ae45fafa2)
 [Uploading Economic grwoth and economic.pptx…]()
