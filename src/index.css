@@ -87,7 +87,7 @@
 
 
 .Footer {
-  border: 3px solid rgb(34, 144, 187);
+  border: 2px solid rgb(34, 144, 187);
   position: absolute;
   background-color: #020a18;
   background-image: linear-gradient(315deg, #2dd185 0%, #16c4ca 74%);

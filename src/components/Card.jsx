@@ -13,7 +13,8 @@ function Card({ title, img, description, action, route }) {
         className="card rounded-md mt-5  relative overflow-hidden transition-transform transform-gpu hover:scale-110 transition ease-in-out delay-150 cards"
        
       >
-        <img src={img} className="card-img-top object-cover h-50 w-full" alt="Card Image" />
+        <img src={img} className="card-img-top object-cover h-50 w-full" alt="Card Image" loading="lazy" />
+
         <div className="card-body flex flex-col gap-4">
           <h5 className="card-title text-xl font-semibold">{title}</h5>
           <p className="card-text">{description}</p>
