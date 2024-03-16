@@ -60,3 +60,9 @@ Handle adding, editing, and deleting questions while updating the local storage 
 - Local Storage
 - boostrap
 - context API
+![WhatsApp Image 2024-03-16 at 13 11 22 (2)](https://github.com/shindebhavika/quiz/assets/103195075/b2d63340-4065-48f6-85b3-b0b1201d33bc)
+![WhatsApp Image 2024-03-16 at 13 11 22 (1)](https://github.com/shindebhavika/quiz/assets/103195075/2136ce26-ae5a-4cc0-b41f-4d71b39d513b)
+![WhatsApp Image 2024-03-16 at 13 11 22](https://github.com/shindebhavika/quiz/assets/103195075/7e485128-713c-4820-8799-ecbc98d77c50)
+![WhatsApp Image 2024-03-16 at 13 11 21 (2)](https://github.com/shindebhavika/quiz/assets/103195075/fca45273-58b9-46d9-9551-e9a921b377a5)
+![WhatsApp Image 2024-03-16 at 13 11 21 (1)](https://github.com/shindebhavika/quiz/assets/103195075/45479951-2684-4e1c-9f47-bb5dbb8fe8d2)
+![WhatsApp Image 2024-03-16 at 13 11 21](https://github.com/shindebhavika/quiz/assets/103195075/95e805a3-c792-4f16-a1f3-9576bacef02d)
