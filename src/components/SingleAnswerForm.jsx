@@ -29,7 +29,15 @@ function SingleAnswerForm() {
     correctAnswer: "",
     optionEmptyError:""
   });
- 
+  useEffect(() => {
+    localStorage.setItem("questions", JSON.stringify(question));
+  }, []); // Empty dependency array ensures this effect runs only once
+  
+  useEffect(() => {
+    const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+    dispatch(clearQuestions());
+    storedQuestions.forEach((question) => dispatch(addQuestion(question)));
+  }, [dispatch]);
   const handleAddQuestion = () => {
     const titleError =
       currentQuestion.title.length < 5 || currentQuestion.title.length > 50
@@ -96,13 +104,19 @@ function SingleAnswerForm() {
     });
   };
 
-  useEffect(() => {
-    localStorage.setItem("questions", JSON.stringify(question));
-    const storedQuestions = JSON.parse(localStorage.getItem("questions")) || [];
-    dispatch(clearQuestions());
-    storedQuestions.forEach((question) => dispatch(addQuestion(question)));
-  }, [dispatch]);
 
+
+  const handleDeleteQuestion = (index) => {
+    const allQuestions = JSON.parse(localStorage.getItem("questions")) || [];
+    allQuestions.splice(index, 1);
+    localStorage.setItem("questions", JSON.stringify(allQuestions));
+    dispatch(clearQuestions());
+    allQuestions.forEach((question) => dispatch(addQuestion(question)));
+
+
+   
+  };
+  
   const handleSave = () => {
     const questionsWithTime = questions.map((question) => ({
       ...question,

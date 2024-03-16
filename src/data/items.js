@@ -109,5 +109,4 @@ export const question = [
 
 
 
-
-  localStorage.setItem("questions", JSON.stringify(question))
+  // localStorage.setItem("questions", JSON.stringify(question))
